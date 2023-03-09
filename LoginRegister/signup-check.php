@@ -59,7 +59,7 @@ if (isset($_POST['email']) && isset($_POST['password'])
 			header("Location: signup.php?error=The Email Address is taken try another&$user_data");
 	        exit();
 		}else {
-           $sql2 = "INSERT INTO users(gmail, password, name, code) VALUES('$email', '$pass', '$name', '$code')";
+           $sql2 = "INSERT INTO users(gmail, password, name) VALUES('$email', '$pass', '$name')";
            $result2 = mysqli_query($conn, $sql2);
            if ($result2) {
 				header("Location: index.php?success=You are registered successfully&$user_data");
